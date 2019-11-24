@@ -1,0 +1,276 @@
+@charset "UTF-8";
+
+/*         상단 헤더                  */
+.header_top					/* fixed에 구애받지않고 자리차지  */
+{
+	width:100%;
+	height:70px;
+}
+
+.header_topFixed			/* fixed에 구애받지않고 자리차지 + 배경흰색  */
+{
+	width:100%;
+	height:70px;
+	top:0;
+	
+	position: fixed;
+	background-color:white;
+	z-index:2;
+	
+}
+
+.header_blackBack
+{
+	width:100%;
+	height:0%;
+	position:fixed;
+	background-color:black;
+	opacity:0.5;
+	display:none;
+	top:70px;
+	overflow:hidden;
+	
+	z-index:2;
+}
+
+.wrapper .header
+{
+	position:fixed;
+	top:0;
+	z-index:5;
+	width:1100px;
+	height:70px;
+	/* fixed + margin:0 auto */
+	left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.wrapper .header .headerLogo
+{
+	float:left;
+	width:50px;
+	height:50px; 
+	margin:9px 0px 0px 10px;
+}
+
+.wrapper .header .headerNav 
+{
+	float:left;
+	margin:0px 0px 0px 20px;
+	padding:26px 0px 26px 10px;
+	width:580px;
+	
+}
+.wrapper .header .headerNavTwo
+{
+	float:right;
+	padding:22px 0px 21px 10px;
+	
+}
+
+.wrapper .header .headerNavTwo_Login
+{
+	float:right;
+	padding:22px 0px 21px 10px;
+	
+}
+
+.wrapper .header .headerNav li
+{
+	float:left;
+	width:auto;
+	margin:0px 40px 0px 8px;
+}
+
+.wrapper .header .headerNavTwo li
+{
+	float:left;
+	width:auto;
+	margin:0px 10px 0px 35px;
+}
+
+.wrapper .header .headerNavTwo_Login li
+{
+	float:left;
+	width:auto;
+	margin:0px 3px 0px 15px;
+}
+
+.wrapper .header .headerNav li a, .wrapper .header .headerNavTwo li a, .wrapper .header .headerNavTwo_Login li a
+{
+	width:auto;
+	display:inline-block;
+	text-align:center;
+	color:#424242;
+	font-size:18px;
+}
+
+/*         로그인버튼하고 왼쪽 li하고 차이                  */
+.wrapper .header .headerNavTwo .loginNav
+{
+	
+}
+.wrapper .header .headerNavTwo_Login .navSearchImg
+{
+	float:left;
+	width:25px;
+	height:25px;
+	margin-top:-2px;
+}
+.wrapper .header .headerNavTwo .navSearchImg
+{
+	float:left;
+	width:25px;
+	height:25px;
+	margin-top:-2px;
+	
+}
+
+.wrapper .header .headerNavTwo .nomargin
+{
+	margin:0px;
+	padding-top:-10px;
+}
+
+/*         상단 헤더  마우스hover시 나오는 흰 배경             */
+
+.wrapper .header_whiteBack
+{
+	position:fixed;
+	top:70px;
+	z-index:3;
+	width:100%;
+	height:0px;
+	background-color:white;
+	overflow:hidden;
+	
+	
+}
+
+.wrapper .header_whiteBack .header_whiteBackIn			/* 화면볼때 여기에 background-color */
+{
+	width:1100px;
+	height:370px;
+	margin:0 auto;
+}
+
+.wrapper .header_whiteBack .header_whiteBackIn .header_Nav
+{
+	width:210px;
+	float:left;
+	height:330px;
+	margin-top:20px;
+}
+
+/* nav에서 New와 Tops 줄사이의 간격 */
+.wrapper .header_whiteBack .header_whiteBackIn .header_NavFirst
+{
+	margin-left:20px;
+}
+
+.wrapper .header_whiteBack .header_whiteBackIn .header_Nav ul
+{
+	width:100px;
+	margin:0 auto;
+}
+
+.wrapper .header_whiteBack .header_whiteBackIn .header_Nav ul li
+{
+	margin-top:13px;
+}
+
+.wrapper .header_whiteBack .header_whiteBackIn .header_Nav ul li a
+{
+	font-size:17px;
+}
+
+.wrapper .header_whiteBack .header_whiteBackIn .header_Nav ul li a:hover
+{
+	text-decoration:underline;
+}
+
+.wrapper .header_whiteBack .header_whiteBackIn .header_Nav ul li .aTitle
+{
+	display:inline-block;
+	font-size:22px;
+}
+
+.wrapper .header_whiteBack .header_whiteBackIn .header_Nav ul .ulTitle
+{
+	margin-bottom:30px;
+}
+
+/*         상단 헤더    검색버튼 클릭시 나오는 화면              */
+.wrapper .header_whiteBackInSearch
+{
+	position:fixed;
+	top:70px;
+	z-index:3;
+	width:100%;
+	height:0px;
+	background-color:white;
+	overflow:hidden;
+	
+}
+.wrapper .header_whiteBackInSearch .header_whiteBackInSearchIn
+{
+	width:1100px;
+	height:380px;
+	margin:0 auto;
+}
+
+.wrapper .header_whiteBackInSearch .header_whiteBackInSearchIn .header_whiteBackForm
+{
+	width:500px;
+	height:380px;
+	margin:0 auto;
+}
+
+.wrapper .header_whiteBackInSearch .header_whiteBackInSearchIn .header_whiteBackForm .searchbox
+{
+	display:inline-block;
+	float:left;
+	width:450px;
+	height:45px;
+	border:0;
+	border-bottom:1px solid black;
+	font-size:20px;
+	color:black;
+	margin-top:90px;
+
+
+	
+}
+
+.wrapper .header_whiteBackInSearch .header_whiteBackInSearchIn .header_whiteBackForm .searchbox:focus 
+{
+	outline: none;			/* text클릭시 파란테두리 제거 */
+}
+
+
+.wrapper .header_whiteBackInSearch .header_whiteBackInSearchIn .header_whiteBackForm .searchBtn 
+{
+	float:left;
+	background: url("image/icon/search_cut.png");
+	background-repeat: no-repeat;
+	width:30px;
+	height:30px;
+	border: 0;
+	display:inline-block;
+	margin:108px 0px 0px 5px;
+}
+
+.wrapper .header_whiteBackInSearch .header_whiteBackInSearchIn .header_whiteBackForm a
+{
+	clear:both;
+	float:left;
+	display:inline-block;
+	margin:15px 0px 0px 0px;
+}
+
+.wrapper .header_whiteBackInSearch .header_whiteBackInSearchIn .header_whiteBackForm a:hover
+{
+	text-decoration:underline;
+}

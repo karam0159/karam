@@ -1,0 +1,531 @@
+@charset "UTF-8";
+
+.wrapper
+{
+	width:100%;
+	margin:0 auto;
+	padding:0;
+}
+
+
+.height_all
+{
+	position: absolute;
+    width:100%;
+    height: calc(100% - 70px);
+	height: -o-calc(100% - 70px); /* opera */
+	height: -webkit-calc(100% - 70px); /* google, safari */
+	height: -moz-calc(100% - 70px); /* firefox */
+}
+
+.Login_Background
+{
+	position:relative;
+    z-index:1;
+    width:100%;
+    height:100%;
+}
+
+.Login_Background:after
+{
+	background-image:url('../image/background/window1.jpg'); 
+    width:100%;
+    height:auto;
+    top:0;
+    left:0;
+    position:absolute;
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    opacity:0.2!important;   
+    filter:alpha(opacity=20);   
+    z-index:-1;
+    content:"";
+    height:100%;
+    
+    
+    
+}
+
+.Login_Background > .Login_container
+{
+	width:100%;
+	height:100%;
+}
+
+.Login_Background .Login_container .Login_container_p
+{
+	width:330px;
+	height:200px;
+	margin:0 auto;
+	position:relative;
+	top:23%;
+}
+
+.Login_Background .Login_container .Login_container_p .loginTitle
+{
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+	width:330px;
+	text-align:center;
+	display:inline-block;
+	margin-bottom:10px;
+}
+
+
+.Login_Background .Login_container .Login_container_p .graybox
+{
+	width:330px;
+	height:165px;
+	background-color:#585858;
+	border:1px solid black;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.Login_Background .Login_container .Login_container_p input
+{
+	width:232px;
+	height:33px;
+	border-radius: 0px 5px 5px 0px;
+	font-size:11px;
+	float:left;
+	border:0px;
+	margin-top:15px;
+	text-align:center;			/* 아이디 비밀번호 가운대정렬 */
+}
+
+.Login_Background .Login_container .Login_container_p .grayboximg
+{
+	width:33px;
+	height:35px;
+	border-radius: 5px 0px 0px 5px;
+	float:left;
+	margin-top:15px;
+	margin-left:30px;
+	
+}
+
+.Login_Background .Login_container .Login_container_p .loginbtn
+{
+	width:265px;
+	color:white;
+	background-color:black;
+	border-radius: 5px 5px 5px 5px;
+	margin-left:30px;
+	font-size:14px;
+}
+
+.Login_Background .Login_container .Login_container_p .loginbottom
+{
+	padding-top:5px;
+	width:230px;
+	margin:0 auto;
+}
+
+.Login_Background .Login_container .Login_container_p .loginbottom a
+{
+	color:black;
+}
+
+
+/*               SignUp                */
+.wrapper .wrapper_p .topImg
+{
+	width:1100px;
+	height:200px;
+	margin:0 auto;
+	margin-top:25px;
+	margin-bottom:25px;
+}
+
+
+.wrapper .wrapper_p .topImg .signUpImg
+{
+	display:block;
+	width:750px;
+	height:270px;
+	margin:0 auto;
+}
+.wrapper .wrapper_p .topImg .imgList
+{
+	width:760px;
+	height:270px;
+	margin:0 auto;
+	margin-top:25px;
+	margin-bottom:25px;
+	
+}
+.wrapper .wrapper_p .topImg .imgList .signUpImg2
+{
+	width:125px;
+	height:200px;
+	margin-top:25px;
+	margin-bottom:25px;
+	
+	
+}
+
+.wrapper .wrapper_p .signUpBody
+{
+	width:1100px;
+	margin:0 auto;
+}
+
+.wrapper .wrapper_p .signUpBody > .title
+{
+	display:inline-block;
+	width:1100px;
+	text-align:center;
+	margin-top:30px;
+}
+
+.wrapper .wrapper_p .signUpBody .signUpForm
+{
+	width:1100px;
+	margin:0 auto;
+}
+
+
+.wrapper .wrapper_p .signUpBody .signUpFormDiv
+{
+	width:700px;
+	margin:0 auto;
+	
+	
+}
+
+.wrapper .wrapper_p .signUpBody .signUpFormDiv a
+{
+	display:inline-block;
+	margin-top:40px;
+	font-size:20px;
+}
+
+.wrapper .wrapper_p .signUpBody .signUpFormDiv input
+{
+	display:inline-block;
+	width:700px;
+	height:50px;
+	font-size:20px;
+}
+
+.wrapper .wrapper_p .signUpBody .signUpForm .signUpText
+{
+	width:700px;
+	margin:0 auto;
+}
+
+.wrapper .wrapper_p .signUpBody .signUpForm .signUpText .title
+{
+	display:inline-block;
+	margin:40px 0px 0px 0px;
+	
+}
+
+.wrapper .wrapper_p .signUpBody .signUpForm .signUpText .signUpTextarea
+{
+	display:inline-block;
+	margin-bottom:10px;
+	width:700px;
+	height:200px;
+	resize:none;
+	overflow-x:hidden;
+}
+
+.wrapper .wrapper_p .signUpBody .signUpForm .signUpBtn
+{
+	display:inline-block;
+	margin:0 auto;
+	margin-top:30px;
+	width:700px;
+	height:50px;
+	border:1px solid black;
+	background-color:white;
+	color:black;
+	margin-bottom:100px;
+	
+}
+
+/* 			Member Delete			 */
+
+.wrapper .wrapper_p .deleteBody , .wrapper .wrapper_p .passwordCheckBody
+{
+	width:1100px;
+	margin:0 auto;
+}
+
+.wrapper .wrapper_p .deleteBody > .title , .wrapper .wrapper_p .passwordCheckBody > .title
+{
+	display:inline-block;
+	width:1100px;
+	text-align:center;
+	margin-top:30px;
+}
+
+.wrapper .wrapper_p .deleteBody .deleteForm , .wrapper .wrapper_p .passwordCheckBody .passwordCheckForm
+{
+	width:1100px;
+	margin:0 auto;
+}
+
+
+.wrapper .wrapper_p .deleteBody .deleteFormDiv
+{
+	width:700px;
+	margin:0 auto;
+}
+
+.wrapper .wrapper_p .deleteBody .deleteFormDiv a
+{
+	display:inline-block;
+	margin-top:40px;
+	font-size:16px;
+}
+
+.wrapper .wrapper_p .deleteBody .deleteFormDiv input[type="checkbox"]
+{
+	display:inline-block;
+	width:18px;
+	height:18px;
+	font-size:20px;
+	margin-left:37%;
+	border:1px solid black;
+	background-color:white;
+}
+
+.wrapper .wrapper_p .deleteBody .deleteFormDiv .deleteBtn
+{
+	display:inline-block;
+	margin-top:25px;
+	width:700px;
+	height:50px;
+	border:1px solid black;
+	background-color:white;
+	color:black;
+	margin-bottom:70px;
+	margin-left:0;
+}
+
+
+/*            password check              */
+
+.wrapper .wrapper_p .passwordCheckBody .passwordCheckForm .passwordCheckDiv
+{
+	width:200px;
+	margin:0 auto;
+	height:100px;
+	margin-top:80px;
+}
+
+.wrapper .wrapper_p .passwordCheckBody .passwordCheckForm .passwordCheckDiv input
+{
+	display:inline-block;
+	width:200px;
+	margin-top:25px;
+}
+
+.wrapper .wrapper_p .passwordCheckBody .passwordCheckForm a
+{
+	margin-top:85px;
+	display:inline-block;
+	width:1100px;
+	text-align:center;
+	font-size:16px;
+}
+
+.wrapper .wrapper_p .passwordCheckBody .passwordCheckForm .passwordCheckDiv .passwordCheckBtn
+{
+	float:left;
+	border:1px solid black;
+	background-color:white;
+	color:black;
+	margin-bottom:150px;
+	
+}
+
+/*   buy list       */
+
+.wrapper .wrapper_p .buyListBody
+{
+	width:1100px;
+	margin:0 auto;
+}
+
+.wrapper .wrapper_p .buyListBody > .title
+{
+	display:inline-block;
+	width:1100px;
+	text-align:center;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+.wrapper .wrapper_p .buyListBody .buyListBox
+{
+	width:1000px;
+	height:320px;
+	margin:0 auto;
+	border:1px solid black;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+
+.wrapper .wrapper_p .buyListBody .buyListBox .buyImage
+{
+	float:left;
+	width:330px;
+	height:320px;
+	margin-right:20px;
+	
+}
+
+.wrapper .wrapper_p .buyListBody .buyListBox a
+{
+	display:inline-block;
+	margin-top:5px;
+	
+}
+.wrapper .wrapper_p .buyListBody .buyListBox .goods_name
+{
+	font-size:24px;
+	width:650px;
+	height:50px;
+}
+
+.wrapper .wrapper_p .buyListBody .buyListBox .goods_price
+{
+	margin-top:20px;
+	font-size:20px;
+}
+
+.wrapper .wrapper_p .buyListBody .buyListBox .goods_count
+{
+	font-size:20px;
+}
+
+.wrapper .wrapper_p .buyListBody .buyListBox .account
+{
+	margin-top:20px;
+	font-size:20px;
+}
+
+.wrapper .wrapper_p .buyListBody .buyListBox .goods_lastprice
+{
+	margin-top:55px;
+	font-size:22px;
+	
+	
+}
+
+.wrapper .wrapper_p .buyListBody .buyListBox .goods_pay
+{
+	font-size:22px;
+}
+
+/*          buy View           */
+
+
+.wrapper .wrapper_p .buyViewBody
+{
+	width:1100px;
+	margin:0 auto;
+}
+
+
+
+.wrapper .wrapper_p .buyViewBody > .title
+{
+	display:inline-block;
+	width:1100px;
+	text-align:center;
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox,.wrapper .wrapper_p .buyViewBody .buyViewBox2
+{
+	width:1100px;
+	height:350px;
+	margin:0 auto;
+	border:1px solid black;
+	margin-top:20px;
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox2
+{
+	height:280px;
+	margin-bottom:40px;
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox .buyImage
+{
+	float:left;
+	width:500px;
+	height:350px;
+	margin-right:20px;
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox .goods_name
+{
+	display:inline-block;
+	margin-top:20px;
+	font-size:34px;
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox a
+{
+	display:inline-block;
+	font-size:24px;
+	width:170px;
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox .goods_lastprice
+{
+	display:inline-block;
+	margin-top:73px;
+	font-size:24px;
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox2 a
+{
+	display:inline-block;
+	margin-top:5px;
+	font-size:24px;
+	width:170px;
+	
+	
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox2 .delState
+{
+	margin-bottom:40px;
+}
+.wrapper .wrapper_p .buyViewBody .buyViewBox2 .buyDeliveryUpdateBtn
+{
+	float:left;
+	display:inline;
+	width:300px;
+	height:50px;
+	text-align:center;
+	line-height:2;
+	background-color:white;
+	border:1px solid black;
+	margin-left:150px;
+}
+
+.wrapper .wrapper_p .buyViewBody .buyViewBox2 .buyDeliveryDeleteBtn
+{
+	display:inline;
+	float:left;
+	width:300px;
+	height:50px;
+	text-align:center;
+	line-height:2;
+	background-color:white;
+	border:1px solid black;
+	margin-left:65px;
+	margin-bottom:50px;
+}
+
+
+

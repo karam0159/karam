@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2. 동적 SQL 적용 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BuyGoodsDAO">
+  <resultMap type="buyGoodsVO" id="buyGoodsResultMap">
+    <id column="buy_index" property="buy_index" />
+    <result column="member_id"    property="member_id" />
+    <result column="member_name"    property="member_name"/>
+    <result column="member_tel"    property="member_tel"/>
+    <result column="member_address"    property="member_address"/>
+    <result column="del_name"    property="del_name"/>
+    <result column="del_tel"    property="del_tel"/>
+    <result column="del_address"    property="del_address"/>
+    <result column="del_request"    property="del_request"/>
+    <result column="del_state"    property="del_state"/>
+    <result column="goods_index"    property="goods_index"/>
+    <result column="goods_name"    property="goods_name"/>
+    <result column="goods_kind"    property="goods_kind"/>
+    <result column="goods_imageTitle"    property="goods_imageTitle"/>
+    <result column="goods_countS"    property="goods_countS"/>
+    <result column="goods_countM"    property="goods_countM"/>
+    <result column="goods_countL"    property="goods_countL"/>
+    <result column="goods_price"    property="goods_price"/>
+    <result column="member_usesitemoney"    property="member_usesitemoney"/>
+    <result column="goods_allprice"    property="goods_allprice"/>
+    <result column="del_price"    property="del_price"/>
+    <result column="goods_lastprice"    property="goods_lastprice"/>
+    <result column="account_name"    property="account_name"/>
+    <result column="account_bank"    property="account_bank"/>
+    <result column="account"    property="account"/>
+    <result column="reg_date"    property="reg_date" javaType="java.sql.Timestamp"/>
+    <result column="end_time"    property="end_time" javaType="java.sql.Timestamp"/>
+  </resultMap>
+
+	<insert id="buyGoodsInsert" parameterType="buyGoodsVO" >
+		insert into buygoods
+		values (0, #{member_id}, #{member_name}, #{member_tel},
+				#{member_address},#{del_name},#{del_tel},#{del_address},
+				#{del_request},#{del_state},#{goods_index},#{goods_name},#{goods_kind},#{goods_imageTitle},
+				#{goods_countS},#{goods_countM},#{goods_countL},#{goods_price},#{member_usesitemoney},
+				#{goods_allprice},#{del_price},#{goods_lastprice},#{account_name},
+				#{account_bank},#{account},now(),#{end_time} )
+	</insert>
+	
+	<select id = "buyGoodsSelectAll" parameterType="String" resultMap="buyGoodsResultMap">
+		select *
+		from buygoods
+		where member_id = #{member_id}
+	</select>	
+	
+	<select id ="buyGoodsSelectAllIdAll" parameterType="String" resultMap="buyGoodsResultMap">
+		select *
+		from buygoods
+	</select>
+	
+	
+	<select id = "buyGoodsSelectList" parameterType="map" resultMap="buyGoodsResultMap">
+		select *
+		from buygoods
+		where member_id = #{member_id}
+		order by buy_index desc
+		limit #{startListNumber},#{limit}
+	</select>
+	
+	<select id ="buyGoodsSelectListAllIdAll" parameterType="map" resultMap="buyGoodsResultMap">
+		select *
+		from buygoods
+		ORDER BY
+   			FIELD(del_state, '입금대기중', '상품준비중') DESC,
+    		buy_index DESC
+		limit #{startListNumber},#{limit}	
+	</select>
+	
+	<select id = "buyGoodsSelectOne" parameterType="int" resultMap="buyGoodsResultMap">
+		select *
+		from buygoods
+		where buy_index = #{buy_index}
+	</select>
+	
+	<update id = "buyGoodsUpdate" parameterType="map">
+		update buygoods
+		<set>
+			<if test="member_name != null">member_name = #{member_name},</if>
+			<if test="member_tel != null">member_tel = #{member_tel}</if>
+			<if test="member_address != null">member_address = #{member_address}</if>
+			<if test="del_name != null">del_name = #{del_name}</if>
+			<if test="del_tel != null">del_tel = #{del_tel}</if>
+			<if test="del_address != null">del_address = #{del_address}</if>
+			<if test="del_request != null">del_request = #{del_request}</if>
+			<if test="account_name != null">account_name = #{account_name}</if>
+			<if test="account_bank != null">account_bank = #{account_bank}</if>
+			<if test="account != null">account = #{account}</if>
+		</set>
+		where buy_index = #{buy_index}
+	</update>
+	
+	<update id="buyGoodsPay" parameterType="int">
+		update buygoods
+		set del_state = "상품준비중"
+		where buy_index = #{buy_index}
+	</update>
+	
+	<update id = "buyGoodsDelGo" parameterType="int">
+		update buygoods
+		set del_state = "배송중"
+		where buy_index = #{buy_index}	
+	</update>
+	
+	<delete id = "buyGoodsDelete" parameterType="int">
+		delete 
+		from buygoods
+		where buy_index = #{buy_index}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+.wrapper .managerHeaderBorder
+{
+	width:100%;
+	border-bottom:1px solid #dddddd;
+	
+	
+}
+
+.wrapper .wrapper_p .mangerHeader
+{
+	width:1100px;
+	height:33px;
+	margin:0 auto;
+	margin-top:10px;
+}
+
+.wrapper .wrapper_p .managerBoardNavDiv .managerBoardNavtops, .wrapper .wrapper_p .managerBoardNavDiv .managerBoardNavboard
+{
+	position:absolute;
+	z-index:2;
+	top:43px;
+	width:150px;
+	background-color:white;
+	height:0px;
+	overflow:hidden;
+	
+}
+.wrapper .wrapper_p .managerBoardNavDiv .managerBoardNavtops li ,.wrapper .wrapper_p .managerBoardNavDiv .managerBoardNavboard li 
+{
+	float:left;
+	height:30px;
+	margin:0;
+	
+}
+.wrapper .wrapper_p .managerBoardNavDiv .managerBoardNavtops li a ,.wrapper .wrapper_p .managerBoardNavDiv .managerBoardNavboard li a
+{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	width:150px;
+	border-top:1px solid black;
+}
+
+.wrapper .wrapper_p .mangerHeader .headerTitle
+{
+	float:left;
+	font-size:26px;
+}
+.wrapper .wrapper_p .mangerHeader ul
+{
+	float:left;
+}
+.wrapper .wrapper_p .mangerHeader ul li
+{
+	float:left;
+	height:33px;
+	margin:1px 40px 0px 40px;
+}
+
+.wrapper .wrapper_p .mangerHeader ul li a
+{
+	font-size:22px;
+}
+
+
+/*           memberManage             */
+
+.wrapper .wrapper_p .ManagerTitle
+{
+	margin-top:20px;
+	margin-bottom:20px;
+	display:inline-block;
+	width:1100px;
+	font-size:26px;
+	text-align:center;
+}
+
+.wrapper .wrapper_p .managerTable
+{
+	width:1100px;
+	border:1px solid #dddddd;
+}
+.wrapper .wrapper_p .managerTable .tr
+{
+	width:1100px;
+	height:32px;
+	line-height:32px;
+	font-size:18px;
+	background-color:#F2F2F2;
+}
+.wrapper .wrapper_p .managerTable .tr a
+{
+	text-align:center;
+	height:23px;
+	line-height:25px;
+}
+.wrapper .wrapper_p .managerTable .tr .small
+{
+	display:inline-block;
+	width:100px;
+}
+.wrapper .wrapper_p .managerTable .tr .normal
+{
+	display:inline-block;
+	width:173px;
+}
+.wrapper .wrapper_p .managerTable .tr .long
+{
+	display:inline-block;
+	width:500px;
+}
+
+.wrapper .wrapper_p .managerTable .tr .highlong
+{
+	display:inline-block;
+	width:600px;
+}
+
+.wrapper .wrapper_p .managerTable .td
+{
+	width:1100px;
+	height:28px;
+	line-height:28px;
+	font-size:16px;
+	border-top:1px solid #dddddd;
+}
+
+.wrapper .wrapper_p .managerTable .td a
+{
+	height:23px;
+	line-height:25px;
+	overflow:hidden; 
+	text-overflow:ellipsis; 
+	white-space:nowrap;
+}
+
+.wrapper .wrapper_p .managerTable .td .small
+{
+	display:inline-block;
+	width:100px;
+	text-align:center;
+}
+.wrapper .wrapper_p .managerTable .td .normal
+{
+	display:inline-block;
+	width:173px;
+	text-align:center;
+}
+.wrapper .wrapper_p .managerTable .td .long
+{
+	display:inline-block;
+	width:500px;
+}
+
+.wrapper .wrapper_p .managerTable .td .highlong
+{
+	display:inline-block;
+	width:600px;
+}
+
+/*        GoodsInsert          */
+
+
+.wrapper .wrapper_p .GoodsInsertForm
+{
+	width:700px;
+	margin:0 auto;
+	border:1px solid black;
+}

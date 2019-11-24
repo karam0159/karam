@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2. 동적 SQL 적용 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.GoodsDAO">
+  <resultMap type="goodsVO" id="goodsResultMap">
+    <id column="goods_index" property="goods_index" />
+    <result column="goods_class"    property="goods_class" />
+    <result column="goods_name"    property="goods_name"/>
+    <result column="goods_kind"    property="goods_kind"/>
+    <result column="goods_imageTitle"    property="goods_imageTitle" />
+    <result column="goods_countS"    property="goods_countS"/>
+    <result column="goods_countM"    property="goods_countM"/>
+    <result column="goods_countL"    property="goods_countL"/>
+    <result column="goods_price"    property="goods_price"/>
+    <result column="goods_sale"    property="goods_sale"/>
+    <result column="goods_lastprice"    property="goods_lastprice"/>
+    <result column="goods_content"    property="goods_content"/>
+    <result column="goods_sellcount"    property="goods_sellcount"/>
+    <result column="readcount"    property="readcount"/>
+     <result column="reg_date"    property="reg_date" javaType="java.sql.Timestamp"/>
+  </resultMap>
+  
+  <resultMap type="goodsImageVO" id="goodsImageResultMap">
+	<id column="goods_index" property="goods_index" />
+	<result column="goods_imageTitleSub1"    property="goods_imageTitleSub1" />
+	<result column="goods_imageTitleSub2"    property="goods_imageTitleSub2" />
+	<result column="goods_imageTitleSub3"    property="goods_imageTitleSub3" />
+	<result column="reg_date"    property="reg_date" javaType="java.sql.Timestamp"/>
+	<result column="goods_index"    property="goods_index" /> 
+  </resultMap>
+  
+  <resultMap type="goodsContentImageVO" id="goodsContentImageResultMap">
+	<id column="goods_ContentImage_index" property="goods_ContentImage_index" />
+	<result column="goods_ContentImage"    property="goods_ContentImage" />
+	<result column="reg_date"    property="reg_date" javaType="java.sql.Timestamp"/>
+	<result column="goods_index"    property="goods_index" />
+  </resultMap>
+  
+	<insert id="goodsInsert" parameterType="goodsVO" >
+		insert into goods 
+		values (0, #{goods_class}, #{goods_name}, #{goods_kind},#{goods_imageTitle},
+				#{goods_countS}, #{goods_countM}, #{goods_countL},
+				#{goods_price},	#{goods_sale},#{goods_lastprice}, #{goods_content}, 0,	0,now() )
+	</insert>
+	
+	<select id="goodsLimitOneSelect" resultMap="goodsResultMap">
+		select *
+		from goods
+		order by goods_index desc
+		limit 0,1
+	</select>
+	
+	<insert id="goodsImageInsert" parameterType="map">
+		insert into goodsImage
+		values( 0, #{goods_imageTitleSub1}, #{goods_imageTitleSub2},
+				#{goods_imageTitleSub3}, now(), #{goods_index} )
+	</insert>
+	
+	<insert id="goodsContentImageInsert" parameterType="map">
+		insert into goodsContentImage
+		values( 0, #{contentFile}, now(), #{goods_index} )
+	</insert>
+	
+	<select id = "goodsAllSelect" parameterType="String" resultMap="goodsResultMap">
+		select * 
+		from goods
+		where goods_class = #{goods_class}
+	</select>
+	
+	<select id = "goodsKindAllSelect" parameterType="map" resultMap="goodsResultMap">
+		select * 
+		from goods
+		where goods_class = #{goods_class} and goods_kind = #{goods_kind}
+	</select>
+	
+	<select id = "goodsSelectList" parameterType="map" resultMap="goodsResultMap">
+		select *
+		from goods
+		where goods_class = #{goods_class}
+		limit #{startListNumber},#{limit}
+	</select>
+
+	<select id = "goodsBestSelectList" parameterType="map" resultMap="goodsResultMap">
+		select *
+		from goods
+		where goods_class = #{goods_class}
+		order by readcount desc
+		limit #{startListNumber},#{limit}
+	</select>
+		
+	<select id = "goodsKindSelectList" parameterType="map" resultMap="goodsResultMap">
+		select *
+		from goods
+		where goods_class = #{goods_class} and goods_kind = #{goods_kind}
+		limit #{startListNumber},#{limit}
+	</select>	
+	
+	<select id = "goodsSelectOne" parameterType="int" resultMap="goodsResultMap">
+		select * 
+		from goods
+		where goods_index = #{goods_index}
+	</select>
+	
+	<select id="goodsImageSelectOne" parameterType="int" resultMap="goodsImageResultMap">
+		select *
+		from goodsImage
+		where goods_index = #{goods_index}
+	</select>
+	
+	<select id="goodsContentImageSelectList" parameterType="int" resultMap="goodsContentImageResultMap">
+		select *
+		from goodsContentImage
+		where goods_index = #{goods_index}
+	</select>
+	
+	<update id = "goodsReadcount" parameterType = "int">
+		update goods
+		set readcount = readcount+1
+		where goods_index = #{goods_index}
+	</update>
+	
+	<delete id = "goodsDelete"  parameterType="int" >
+		delete from goods
+		where goods_index = #{goods_index}
+	</delete>
+	
+	<delete id ="goodsImageDelete" parameterType="int">
+		delete from goodsImage
+		where goods_index = #{goods_index}
+	</delete>
+	
+	<delete id ="goodsContentImageDelete" parameterType="int">
+		delete from goodsContentImage
+		where goods_index = #{goods_index}
+	</delete>
+	
+	<update id = "goodsUpdate" parameterType="map">
+		update goods 
+		<set>
+			<if test="goods_name != null">goods_name = #{goods_name},</if>
+			<if test="goods_kind != null">goods_kind = #{goods_kind},</if>
+			<if test="goods_imageTitle != null">goods_imageTitle = #{goods_imageTitle},</if>
+			<if test="goods_countS != null">goods_countS = #{goods_countS},</if>
+			<if test="goods_countM != null">goods_countM = #{goods_countM},</if>
+			<if test="goods_countL != null">goods_countL = #{goods_countL},</if>
+			<if test="goods_price != null">goods_price = #{goods_price},</if>
+			<if test="goods_sale != null">goods_sale = #{goods_sale},</if>
+			<if test="goods_lastprice != null">goods_lastprice = #{goods_lastprice},</if>
+			<if test="goods_content != null">goods_content = #{goods_content}</if>
+		</set>
+		where goods_index = #{goods_index}
+	</update>
+	
+	<update id ="goodsImageUpdate" parameterType="goodsImageVO">
+		update goodsImage
+		set goods_imageTitleSub1 = #{goods_imageTitleSub1},
+			goods_imageTitleSub2 = #{goods_imageTitleSub2},
+			goods_imageTitleSub3 = #{goods_imageTitleSub3}
+		where goods_index = #{goods_index}
+	</update>
+	
+	<update id = "buyGoodsCountMinus" parameterType="map">
+		update goods
+		set 
+			goods_countS = goods_countS - #{goods_countS},
+			goods_countM = goods_countM - #{goods_countM},
+			goods_countL = goods_countL - #{goods_countL}
+		where goods_index = #{goods_index}
+	</update>
+	
+	<select id = "goodsSelectListMain" resultMap="goodsResultMap">
+		select *
+		from goods
+		order by readcount desc
+		limit 0,16
+	</select>
+	
+	<select id= "goodsCount" resultMap="goodsResultMap">
+		select *
+		from goods
+	</select>
+	
+	<select id ="goodsNameCheck" resultMap="goodsResultMap">
+		select *
+		from goods
+		where goods_name = #{goods_name} and goods_class = #{goods_class}
+	</select>
+	
+	<select id = "goodsSearchAllCount" parameterType="String" resultMap="goodsResultMap">
+		select *
+		from goods
+		where goods_name like CONCAT('%',#{goods_name},'%')
+	</select>
+	
+	<select id = "goodsSearchList" parameterType="map" resultMap="goodsResultMap">
+		select *
+		from goods
+		where goods_name like CONCAT('%',#{goods_name},'%')
+		limit #{startNumber},#{limit}
+	</select>	
+	
+	<select id = "goodsNameSearchAll" parameterType="String" resultType="int">
+		select count(*)
+		from goods
+		where goods_name like CONCAT('%',#{goods_name},'%')
+	</select>
+	
+	<select id = "goodsNameSearchSelect" parameterType="map" resultMap="goodsResultMap">
+		select *
+		from goods
+		where goods_name like CONCAT('%',#{goods_name},'%')
+		limit #{startNumber},#{limit}
+	</select>
+	
+</mapper>

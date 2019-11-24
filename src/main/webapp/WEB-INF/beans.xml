@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:c="http://www.springframework.org/schema/c"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:jee="http://www.springframework.org/schema/jee"
+	   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd
+	   http://www.springframework.org/schema/jee
+	   http://www.springframework.org/schema/jee/spring-jee.xsd"
+	   >
+		 
+	<context:component-scan base-package = "com.neating">
+	</context:component-scan>
+
+
+	  <!--  DB 연결  -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		p:driverClassName = "com.mysql.jdbc.Driver"  
+		p:url = "jdbc:mysql://localhost:3306/neating?serverTimezone=UTC"
+		p:username="root" p:password="1234" />
+		
+		
+	  <bean id="transactionManager" 
+	      class="org.springframework.jdbc.datasource.DataSourceTransactionManager">	<!-- 트랜잭션 -->
+	    <property name="dataSource" ref="dataSource" />			<!-- dataSource에 관한 트랜잭션 -->
+	  </bean>
+	  
+	  <!-- mybatis-config.xml대체 -->
+	  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> <!-- mybatis 세션팩토리 객체 등록 -->
+	    <property name="dataSource" ref="dataSource" />			<!-- dataSource 참조 -->
+	    <property name="typeAliasesPackage" value="com.neating" />		<!-- 빈즈객체 연결 vo가 빈즈파일있는 곳 -->
+	    <property name="mapperLocations" value="classpath*:dao/*DAO.xml" />	<!-- xml 매퍼파일 연결 -->
+	  </bean>
+	  
+	<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/html; charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>application/json; charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	
+	 <!-- file Upload -->
+    <bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- max upload size in bytes -->
+        <property name="maxUploadSize" value="30242880" /> <!-- 30MB -->
+        <!-- max size of file in memory (in bytes) -->
+        <!-- <property name="maxInMemorySize" value="20485760" /> --> <!-- 20MB --> 
+    </bean>
+</beans>
+

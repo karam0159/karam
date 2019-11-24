@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+.wrapper .commBorder
+{
+	width:100%;
+	border-bottom:1px solid #dddddd;
+}
+
+.wrapper .wrapper_p .table
+{
+	width:1100px;
+	margin:0 auto;
+	margin-top:100px;
+	margin-bottom:100px;
+	border:1px solid #dddddd;
+}
+
+.wrapper .wrapper_p .table .tr
+{
+	width:1100px;
+	height:25px;
+}
+
+.wrapper .wrapper_p .table .tr a
+{
+	line-height:25px;
+}
+ .wrapper .wrapper_p .table .td
+{
+ 	width:1100px;
+	height:25px;
+	border-top:1px solid #dddddd;
+}
+ 
+.wrapper .wrapper_p .table .td a
+{
+	line-height:25px;
+}
+
+.wrapper .wrapper_p .table .tr .small
+{
+	float:left;
+	width:100px;
+	height:25px;
+	text-align:center;
+}
+.wrapper .wrapper_p .table .td .small
+{
+	float:left;
+	width:100px;
+	height:25px;
+	text-align:center;
+}
+
+.wrapper .wrapper_p .table .tr .normal
+{
+	float:left;
+	width:150px;
+	height:25px;
+	text-align:center;
+}
+.wrapper .wrapper_p .table .td .normal
+{
+	float:left;
+	width:150px;
+	height:25px;
+	text-align:center;
+}
+.wrapper .wrapper_p .table .tr .long
+{
+	float:left;
+	width:600px;
+	height:25px;
+	text-align:center;
+}
+.wrapper .wrapper_p .table .td .long
+{
+	float:left;
+	width:600px;
+	height:25px;
+}

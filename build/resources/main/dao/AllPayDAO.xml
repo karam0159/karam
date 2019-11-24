@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2. 동적 SQL 적용 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.AllPayDAO">
+  <resultMap type="AllPayVO" id="allPayResultMap">
+    <id column="allPay" property="allPay" />
+  </resultMap>
+
+	<update id="allPayUpdate" parameterType="int">
+		update allPay
+		set allPay = allPay+#{goods_lastprice}
+	</update>
+	
+	<select id="allPaySelect" resultMap="allPayResultMap">
+		select *
+		from allPay
+	</select>
+</mapper>

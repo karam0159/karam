@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2. 동적 SQL 적용 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.MemberDAO">
+  <resultMap type="memberVO" id="memberResultMap">
+    <id column="member_index" property="member_index"/>
+    <result column="member_name"    property="member_name"/>
+    <result column="member_id"    property="member_id"/>
+    <result column="member_password"      property="member_password"/>
+    <result column="member_salt"      property="member_salt"/>
+    <result column="member_address"      property="member_address"/>
+    <result column="member_tel"      property="member_tel"/>
+    <result column="member_email"      property="member_email"/>
+    <result column="member_birth"      property="member_birth"/>
+    <result column="member_rank"      property="member_rank"/>
+    <result column="member_gold"      property="member_gold"/>
+    <result column="member_siteMoney"      property="member_siteMoney"/>
+    <result column="account_name"      property="account_name"/>
+    <result column="account_bank"      property="account_bank"/>
+    <result column="account"      property="account"/>
+    <result column="sell_count"      property="sell_count"/>
+    <result column="reg_date" property="reg_date" javaType="java.sql.Timestamp"/>
+  </resultMap>
+  <resultMap type="MemberPointVO" id="memberPointResultMap">
+  	 <id column="memberPoint_index" property="memberPoint_index"/>
+  	 <result column="member_rank"      property="member_rank"/>
+  	 <result column="member_siteMoney"      property="member_siteMoney"/>
+  	 <result column="reg_date" property="reg_date" javaType="java.sql.Timestamp"/>
+  </resultMap>
+
+  <insert id="memberInsert" parameterType="memberVO">
+    insert into member
+    values (0,#{member_name},#{member_id},#{member_password},#{member_salt},
+    		#{member_address}, #{member_tel},#{member_email}, #{member_birth},
+    		"bronze", 0, 5000, #{account_name}, 
+    		#{account_bank}, #{account},0,
+    		now() )
+  </insert>
+  
+  <select id="memberLogin" parameterType="map" resultMap="memberResultMap">
+    select *
+    from member 
+    where member_id = #{member_id} and member_password = #{member_password}
+  </select>
+
+  <select id="memberSelectOne" parameterType="map" resultMap="memberResultMap">
+    select *
+    from member 
+    where member_id = #{member_id}
+  </select>
+  
+	<update id="memberUpdate" parameterType="map">
+		update member 
+		<set>
+			<if test="member_name != null"> member_name=#{member_name},</if>
+			<if test="member_password != null">
+				member_password=#{member_password},
+				member_salt = #{member_salt},
+			</if>
+			<if test="member_address != null"> member_address=#{member_address},</if>
+			<if test="member_tel != null"> member_tel=#{member_tel},</if>
+			<if test="member_email != null"> member_email=#{member_email},</if>
+			<if test="member_birth != null"> member_birth=#{member_birth},</if>
+			<if test="account_name != null"> account_name=#{account_name},</if>
+			<if test="account_bank != null"> account_bank=#{account_bank},</if>
+			<if test="account != null"> account=#{account}</if>
+		</set>
+		where member_id = #{member_id}	
+	</update>
+	
+	<delete id = "memberDelete" parameterType="String">
+		delete from member
+		where member_id = #{member_id}
+	</delete>
+	
+	<select id = "MemberSelectALL" resultMap="memberResultMap">
+		select *
+		from member
+	</select>
+	
+	<select id = "MemberSelectList" parameterType="map" resultMap="memberResultMap">
+		select *
+		from member
+		Limit #{startListNumber},#{limit}
+	</select>
+	
+	<select id = "memberIdSearch" parameterType="map" resultMap="memberResultMap">
+		select member_id
+		from member
+		where member_name = #{member_name} and member_email = #{member_email}
+	</select>
+	
+	<update id="memberPasswordChange" parameterType="map">
+		update member set
+		member_password = #{member_password}
+		where member_id = #{member_id} and member_name = #{member_name} and member_email = #{member_email}
+	</update>
+	
+	<update id = "memberUseSiteMoney" parameterType="map">
+		update member set
+		member_siteMoney = member_siteMoney - #{member_siteMoney}
+		where member_id = #{member_id}
+	</update>
+	
+	<update id = "memberSiteMoneyReturn" parameterType="map">
+		update member set
+		member_siteMoney = member_siteMoney + #{member_siteMoney}
+		where member_id = #{member_id}
+	</update>
+	
+	<update id="MemberSellUpdate" parameterType="map">
+		update member
+		set sell_count = sell_count+1,
+			member_gold = member_gold + #{goods_lastprice}, 
+			member_rank = "${member_rank}"
+		where member_id = #{member_id}
+	</update>
+	
+	<update id = "memberPoint" parameterType="String" >
+		update member
+		set member_siteMoney = member_siteMoney + 5000
+		where member_id = #{member_id}
+	</update>
+
+	<select id ="memberIdSearchAllSelectList" parameterType="String" resultType="int">
+		select count(*)
+		from member
+		where member_id like CONCAT('%',#{member_id},'%')
+	</select>
+	
+	<select id ="memberIdSearchList"  parameterType="map" resultMap="memberResultMap">
+		select *
+		from member
+		where member_id like CONCAT('%',#{member_id},'%')
+		limit #{startNumber},#{limit}
+	</select>
+
+	<update id = "memberSiteMoneyAdd"  parameterType="map">
+		update member 
+		set	member_siteMoney = member_siteMoney + #{member_siteMoney}
+		where member_rank = #{member_rank} 
+	</update>
+	
+	<insert id ="memberPointRegDateInsert" parameterType="map">
+		insert into memberPointAdd
+		values( 0,#{member_rank}, #{member_siteMoney}, now() )
+	</insert>
+	
+	<select id="memberPointSelect" resultMap="memberPointResultMap">
+		select *
+		from memberPointAdd
+		order by memberPoint_index desc
+		limit 0,10
+	</select>
+	
+	<select id ="memberLoginUpdate" parameterType="String" resultMap="memberResultMap">
+		select *
+		from member
+		where member_id = #{member_id}
+	</select>
+</mapper>

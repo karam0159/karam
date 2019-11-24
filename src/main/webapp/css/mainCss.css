@@ -1,0 +1,754 @@
+@charset "UTF-8";
+
+.wrapper .topSideBorder
+{
+	width:100%;
+	height:70px;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+}
+
+.wrapper .topSideBorder .topSideMenu
+{
+	width:1100px;
+	margin:0 auto;
+	height:70px;
+}
+
+.wrapper .topSideBorder .topSideMenu .topSideMenuUl
+{
+	margin:0 auto;
+}
+
+.wrapper .topSideBorder .topSideMenu .topSideMenuUl li
+{
+	float:left;
+	margin-top:25px;
+	width:150px;
+	text-align:center;
+}
+
+/*    goodsList     */
+
+
+.wrapper .wrapper_p .mainImg
+{
+	width:1100px;
+	height:500px;
+	margin:0 auto;
+	margin-top:10px;
+}
+
+.wrapper .wrapper_p .mainImg .goodsMainImg 
+{
+	width:1090px;
+	height:500px;
+}
+
+.wrapper .wrapper_p .GoodsFullBox
+{
+	width:1100px;
+	margin:0 auto;
+	display:inline-block;
+}
+
+.wrapper .wrapper_p .GoodsFullBox .GoodsBox
+{
+	float:left;
+	margin-top:20px;
+	margin-right:12px;
+	width:261px;
+	height:370px;
+	border:1px solid #dddddd;
+
+}
+
+.wrapper .wrapper_p .GoodsFullBox .GoodsBox .goodsbox_img
+{
+	width:261px;
+	height:300px;
+}
+
+.wrapper .wrapper_p .GoodsFullBox .GoodsBox .goodsTitle
+{
+	display:inline-block;
+	width:261px;
+	height:45px;
+	text-align:center;
+}
+
+.wrapper .wrapper_p .GoodsFullBox .GoodsBox .goodsPrice
+{
+	display:inline-block;
+	width:261px;
+	text-align:right;
+	
+}
+
+/* 			goodsView           */
+
+.wrapper .GoodsViewBorder
+{
+	width:100%;
+	height:1px;
+	border-bottom:1px solid #dddddd;
+}
+
+.wrapper .GoodsViewBody
+{
+	width:1100px;
+	margin:0 auto;
+	margin-top:15px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyImg
+{
+	float:left;
+	width:600px;
+	height:800px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewImg
+{
+	float:left;
+	width:600px;
+	height:650px; 
+}
+
+.wrapper .GoodsViewBody .GoodsViewImgShow
+{
+	float:left;
+	width:150px;
+	height:150px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo
+{
+	float:left;
+	width:400px;
+	margin-left:80px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .goods_A
+{
+	float:left;
+	display:inline-block;
+	width:10px;
+	font-size:22px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsTitle
+{
+	float:left;
+	width:400px;
+	font-size:28px;
+	border:0px;
+	margin-top:2px;
+	margin-bottom:20px;
+	
+	
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsOriginPrice
+{	
+	float:left;
+	font-size:22px;
+	border:0px;
+	color:gray;
+	text-decoration: line-through;
+	
+}
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsPrice
+{
+	float:left;
+	margin-left:5px;
+	font-size:22px;
+	border:0px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsInfo
+{
+	margin-top:60px;
+	clear:both;
+	float:left;
+	font-size:18px;
+	width:400px;
+	padding-bottom:40px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSizeDiv
+{
+	width:400px;
+	height:110px;
+	float:left;
+	border-top:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSizeDiv .GoodsSizeA
+{
+	display:inline-block;
+	float:left;
+	margin:45px 0px 0px 50px;
+	width:100px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSizeDiv .GoodsSizeSelect
+{
+	float:left;	
+	margin-top:40px;
+	width:200px;
+	height:25px;
+	color:gray;
+	font-size:14px;
+	
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect
+{
+	display:none;
+	margin-top:35px;
+	clear:both;
+	float:left;
+	width:400px;
+	padding-bottom:10px;
+	border-bottom:1px solid #dddddd;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect .bigA
+{
+	display:inline-block;
+	float:left;
+	width:200px;
+	height:35px;
+}
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect .smallA
+{
+	display:inline-block;
+	float:left;
+	width:100px;
+	height:35px;
+}
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect .smallInput
+{
+	margin-top:-8px;
+	display:inline-block;
+	float:left;
+	width:60px;
+	border:0px;
+	line-height:30px;
+	
+}
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: block;
+    cursor:pointer;
+    display:block;
+    color: #333;
+    text-align:center;
+    position:relative;
+    opacity: 1;
+    
+}    
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect .PriceInput
+{
+	float:left;
+	width:85px;
+	
+	margin-top:-6px;
+	border:0;
+	text-align:right;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect .deleteBtn
+{
+	float:left;
+	margin-top:-4px;
+	margin-left:10px;
+	cursor:pointer;
+}
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect .GoodsSDiv
+{
+	clear:both;
+	float:left;
+	width:400px;
+	height:50px;
+	display:none;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect .GoodsMDiv
+{
+	clear:both;
+	float:left;
+	width:400px;
+	height:50px;
+	display:none;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsSelect .GoodsLDiv
+{
+	clear:both;
+	float:left;
+	width:400px;
+	height:50px;
+	display:none;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsCalculation
+{
+	margin-top:60px;
+	float:left;
+	width:400px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsCalculation .GoodsAllPriceA
+{
+	float:left;
+	width:130px;
+	font-size:22px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsCalculation .GoodsAllPriceInput
+{
+	float:left;
+	width:235px;
+	margin-top:-2px;
+	border:0;
+	font-size:20px;
+	text-align:right;
+	margin-right:5px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsCalculation .GoodsWon
+{
+	float:left;
+	font-size:20px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsBtnDiv
+{
+	float:left;
+	width:400px;
+}
+
+.wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsBtnDiv .GoodsBuyBtn, .wrapper .GoodsViewBody .GoodsViewBodyInfo .GoodsBtnDiv .GoodsCartBtn
+{
+	display:inline-block;
+	float:left;
+	margin:50px 0px 0px 20px;
+	width:170px;
+	height:40px;
+	background-color:white;
+	border:1px solid black;
+	text-align:center;
+	line-height:1.8;
+	font-size:22px;
+	cursor:pointer;
+}
+
+/*          GoodsViewBottom             */
+
+.wrapper .GoodsViewBottom
+{
+	clear:both;
+	width:1100px;
+	margin:0 auto;
+}
+
+.wrapper .margin
+{
+	width:1100px;
+	height:70px;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBtn
+{
+	margin:0 auto;
+	width:610px;
+	height:32px;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBtn a
+{
+	float:left;
+	display:inline-block;
+	width:200px;
+	height:30px;
+	border:1px solid #dddddd;
+	border-bottom:0px;
+	line-height:30px;
+	text-align:center;
+	cursor:pointer;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody
+{
+	margin-top:-1px;
+	width:1100px;
+	border:1px solid #dddddd;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyInfo
+{
+	width:1100px;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyInfo .GoodsViewTapBodyImgDiv
+{
+	width:1100px;
+	border-bottom:1px solid #dddddd;
+	
+}
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyInfo .GoodsViewTapBodyImgDiv .goodsNoticeImg
+{
+	display:block;
+	width:700px;
+	margin:0 auto;	
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyInfo .GoodsViewTapBodyImg .goodsImg
+{
+	width:1100px;
+}
+
+
+/*            Goods Reply                */
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReply
+{
+	display:none;
+	width:1100px;
+	margin-bottom:30px;
+	
+	
+}
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReply .userId
+{
+	display:inline-block;
+	margin-top:30px;
+	width:1100px;
+	margin-left:100px;
+	font-size:20px;
+}
+
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReply  .margin
+{
+	clear:both;
+	width:1100px;
+	height:40px;
+	border-bottom:1px solid #dddddd;
+}
+
+
+
+/*             Goods Return              */
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReturn
+{
+	display:none;
+	width:1100px;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReturn .DeliveryTitle
+{
+	display:inline-block;
+	margin-top:15px;
+	width:1100px;
+	text-align:center;
+	font-size:26px;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReturn .DeliverySubTitle
+{
+	display:inline-block;
+	margin-top:2px;
+	width:1100px;
+	text-align:center;
+	font-size:20px;
+	color:gray;
+	padding-bottom:10px;
+	border-bottom:1px solid #dddddd;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReturn .DeliveryImg
+{
+	display:inline-block;
+	width:900px;
+	margin-top:40px;
+	margin-left:100px;
+	margin-bottom:40px;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReturn .DeliverySubDiv
+{
+	width:620px;
+	margin:0 auto;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReturn .DeliverySubDiv .DeliverySubTitle2
+{
+	font-size:20px;
+	display:inline-block;
+	margin-top:15px;
+	width:620px;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReturn .DeliverySubDiv a
+{
+	display:inline-block;
+	margin-top:5px;
+}
+
+.wrapper .GoodsViewBottom .GoodsViewTapBody .GoodsViewTapBodyReturn .DeliverySubDiv .margin
+{
+	width:620px;
+	height:60px;
+	display:inline-block;
+}
+
+
+/*             goodsBuyPage              */
+
+.wrapper .wrapper_p .goodsBuyBox
+{
+	width:1100px;
+	height:400px;
+	border:1px solid #dddddd;
+}
+
+.wrapper .wrapper_p .goodsBuyBox .goodsBuyTitle
+{
+	float:left;
+	margin-top:15px;
+	margin-bottom:15px;
+	display:inline-block;
+	width:1100px;
+	text-align:center;
+	font-size:26px;
+	
+}
+
+.wrapper .wrapper_p .goodsBuyBox .goodsImg
+{
+	float:left;
+	width:300px;
+	height:300px;
+	margin-left:120px;
+	
+}
+
+.wrapper .wrapper_p .goodsBuyBox .GoodsInfo
+{
+	float:left;
+	width:630px;
+	margin-left:20px;
+	
+}
+
+.wrapper .wrapper_p .goodsBuyBox .goodsName
+{
+	float:left;
+	width:630px;
+	font-size:24px;
+	border:0px;
+}
+
+.wrapper .wrapper_p .goodsBuyBox .goodsBuyInfoA
+{
+	float:left;
+	width:120px;
+	font-size:20px;
+}
+
+.goodsBuyInfoB
+{
+	clear:both;
+	float:left;
+	width:120px;
+	font-size:20px;
+	
+}
+
+.wrapper .wrapper_p .goodsBuyBox .goodsPrice, .wrapper .wrapper_p .goodsBuyBox .goodsCount, .wrapper .wrapper_p .goodsBuyBox .delPrice
+{
+	float:left;
+	width:440px;
+	text-align:right;
+	font-size:20px;
+	border:0px;
+}
+.wrapper .wrapper_p .goodsBuyBox .won
+{
+	display:inline-block;
+	float:left;
+	width:70px;
+	font-size:20px;
+	margin-top:2px;
+}
+
+.wrapper .wrapper_p .goodsBuyBox .margin
+{
+	float:left;
+	width:630px;
+	height:140px;
+}
+
+.wrapper .wrapper_p .goodsBuyBox .goodsAllPrice
+{
+	float:left;
+	width:500px;
+	text-align:right;
+	font-size:24px;
+	border:0px;
+}
+
+.wrapper .wrapper_p .goodsBuyBox input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: block;
+    cursor:pointer;
+    display:block;
+    color: #333;
+    text-align:center;
+    position:relative;
+    opacity: 1;
+}    
+
+.wrapper .wrapper_p .goodsBuyHumanBox
+{
+	float:left;
+	margin-top:5px;
+	width:520px;
+	height:380px;
+	border:1px solid #dddddd;
+}
+
+.wrapper .wrapper_p .goodsBuyHumanBox .goodsBuyTitle
+{
+	float:left;
+	margin-top:15px;
+	margin-bottom:15px;
+	display:inline-block;
+	width:530px;
+	text-align:center;
+	font-size:26px;
+	margin-left:0;
+}
+
+.wrapper .wrapper_p .goodsBuyHumanBox a
+{
+	float:left;
+	display:inline-block;
+	width:410px;
+	font-size:20px;
+	margin-left:90px;
+	margin-top:15px;
+	
+}
+
+.wrapper .wrapper_p .goodsBuyHumanBox input
+{
+	float:left;
+	display:inline-block;
+	width:300px;
+	height:30px;
+	font-size:22px;
+	margin-left:90px;
+}
+
+.wrapper .wrapper_p .goodsBuyArrow
+{
+	float:left;
+	width:26px;
+	height:50px;
+	margin:180px 15px 0px 15px;
+	cursor:pointer;
+}
+
+.wrapper .wrapper_p .goodsBuyPayment
+{
+	float:left;
+	margin-top:5px;
+	width:1100px;
+	height:380px;
+	border:1px solid #dddddd;
+	margin-bottom:70px;
+}
+
+.wrapper .wrapper_p .goodsBuyPayment .goodsBuyTitle
+{
+	display:inline-block;
+	width:1100px;
+	text-align:center;
+	font-size:26px;
+	margin:15px 0px 15px 0px;
+	
+}
+.wrapper .wrapper_p .goodsBuyPayment .leftmargin
+{
+	margin-left:150px;
+}
+.wrapper .wrapper_p .goodsBuyPayment a
+{
+	display:inline-block;
+	width:300px;
+	font-size:20px;
+}
+
+.wrapper .wrapper_p .goodsBuyPayment .blank
+{
+	display:inline-block;
+	width:100px;
+	text-align:center;
+	font-size:26px;
+}
+
+.wrapper .wrapper_p .goodsBuyPayment input
+{
+	display:inline-block;
+	width:200px;
+	height:30px;
+	font-size:22px;
+}
+
+.wrapper .wrapper_p .goodsBuyPayment .payBtn
+{
+	width:700px;
+	height:50px;
+	background-color:white;
+	border:1px solid black;
+	display:inline-block;
+	margin-left:190px;
+	margin-top:30px;
+}
+
+/*            goods reply          */
+.wrapper .replyInput
+{
+	float:left;
+	width:1100px;
+	border:1px solid #BDBDBD;
+	border-top:0px;
+}
+
+
+.wrapper .replyBody
+{
+	float:left;
+	width:1100px;
+	height:auto;
+	border:1px solid #BDBDBD;
+	border-top:0px;
+}
+
+
+
+.wrapper .replyBody .reply
+{
+	clear:both;
+	width:1100px;
+	height:38px;
+	border-bottom:1px solid #BDBDBD;
+	
+	
+	
+}

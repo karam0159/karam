@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 2. 동적 SQL 적용 -->
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.BoardDAO">
+  <resultMap type="boardVO" id="boardResultMap">
+    <id column="board_index" property="board_index" />
+    <result column="board_class"    property="board_class" />
+    <result column="member_id"    property="member_id"/>
+    <result column="board_title"    property="board_title"/>
+    <result column="board_content"    property="board_content"/>
+    <result column="board_image"    property="board_image"/>
+    <result column="readcount"    property="readcount"/>
+    <result column="reg_date"    property="reg_date" javaType="java.sql.Timestamp"/>
+    <result column="modify_date"    property="modify_date" javaType="java.sql.Timestamp"/>
+  </resultMap>
+
+	<insert id="boardInsert" parameterType="boardVO" >
+		insert into board 
+		values (0, #{board_class}, #{member_id}, #{board_title},
+				#{board_content},#{board_image},
+				0,now(),now() )
+	</insert>
+	
+	<select id = "boardAllList" parameterType="String" resultMap="boardResultMap">
+		select * 
+		from board
+		where board_class = #{board_class}
+	</select>
+	
+	<select id = "boardSelectList" parameterType="map" resultMap="boardResultMap">
+		select *
+		from board
+		where board_class = #{board_class}
+		limit #{startListNumber},#{limit}
+	</select>
+	
+	<select id = "boardSelectOne" parameterType="int" resultMap="boardResultMap">
+		select *
+		from board
+		where board_index = #{board_index}
+	</select>
+	
+	<delete id = "boardDelete" parameterType="int" >
+		delete
+		from board
+		where board_index = #{board_index}
+	</delete>
+	
+	<update id = "boardUpdate" parameterType="map">
+		update board
+		<set>
+			<if test="board_title != null">board_title = #{board_title},</if>
+			<if test="board_content != null">board_content = #{board_content},</if>
+			<if test="board_image != null">board_image = #{board_image},</if>
+			modify_date = now()
+		</set>
+		where board_index = #{board_index}
+	</update>
+	
+	<update id = "boardReadCount" parameterType="int">
+		update board
+		set readcount = readcount+1
+		where board_index = #{board_index}
+	</update>
+	
+	<select id="boardCount" resultMap="boardResultMap">
+		select *
+		from board
+	</select>
+	
+	<select id = "boardTitleSearchAll" parameterType="String" resultType="int">
+		select count(*)
+		from board
+		where board_title like CONCAT('%',#{board_title},'%')
+	</select>
+	
+	<select id = "boardTitleSearch" parameterType="map" resultMap="boardResultMap">
+		select *
+		from board
+		where board_title like CONCAT('%',#{board_title},'%')	
+		limit #{startNumber},#{limit}
+	</select>
+	
+	<select id = "boardTitleClassSearch" parameterType="map" resultType="int">
+		select count(*)
+		from board
+		where board_title like CONCAT('%',#{board_title},'%') and board_class = #{board_class}
+	</select>
+	
+	<select id = "boardTitleClassList" parameterType="map" resultMap="boardResultMap">
+		select *
+		from board
+		where board_title like CONCAT('%',#{board_title},'%') and board_class=  #{board_class}
+		limit #{startNumber},#{limit}
+	</select>
+</mapper>
