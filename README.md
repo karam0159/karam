@@ -51,6 +51,7 @@
 
 #### 네이버 스마트 에디터를 이용하여 게시판 작성시 쉽고 편하게 작성을 도와준다.
 
+![smart](https://user-images.githubusercontent.com/57895491/69517257-87bcd800-0f97-11ea-9a3a-cca2b963ca6c.PNG)
 
 
 
