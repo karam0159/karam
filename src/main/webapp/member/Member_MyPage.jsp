@@ -119,7 +119,7 @@ $( document ).ready( function() {
 						<a style="width:473px;">PASSWORD</a><div class="passwordCheck" id="passwordCheck" style="display:inline-block;"></div><br><input type="password" name="member_password" id="member_password" value="" required="required"/><br>
 						<a>PASSWORD CHECK</a><br><input type="password" name="password_check" id="member_passwordCheck" value=""required="required"/><br>
 						<a>ADDRESS</a><br><input type="text" name="member_address" id="address" value="${memberVO.member_address }" required="required"/><br>
-						<a>TEL</a><br><input type="text" name="member_tel" id="tel" value="${memberVO.member_tel }" required="required" placeholder="- 제외하고 작성해주세요"/><br>
+						<a>TEL</a><br><input type="number" name="member_tel" id="tel" value="${memberVO.member_tel }" required="required" placeholder="- 제외하고 작성해주세요"/><br>
 						<a>EMAIL</a><br><input type="text" name="member_email" id="email" value="${memberVO.member_email }" required="required" /><br>
 						<a>BIRTH</a><br><input type="date" name="member_birth" id="birth" value="${memberVO.member_birth }" required="required"/><br>
 						<a>ACCOUNT_NAME</a><br><input type="text" name="account_name" id="account_name" value="${memberVO.account_name }" required="required"/><br>
