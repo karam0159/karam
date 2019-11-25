@@ -2,6 +2,7 @@
 
 ## Spring Gradle / MySQL / Mybatis
 
+![메인화면](https://user-images.githubusercontent.com/57895491/69517004-c8682180-0f96-11ea-9292-3451ff44adbd.PNG)
 
 
 ### Member
@@ -10,6 +11,8 @@
 ##### - member_id : 길이 제한
 ##### - member_password : 길이 제한, 영어+숫자+특수문자 필수
 ##### - 비밀번호는 SHA-256으로 암호화하여 보안성을 높였다.
+
+
 
 #### Search
 ##### - 회원이 아이디와 비밀번호를 잊어버린 경우에는 SMTP 메일을 통해 메일로 랜덤숫자를 전송하여 그 숫자를 입력하면
