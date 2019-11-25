@@ -77,8 +77,7 @@ $( document ).ready( function() {
     	var member_passwordCheck = $("#member_passwordCheck").val();
     	var passLength = member_password.length;
     	
-    	var checkNumber = member_password.search(/[0-9]/g);
-    	var checkEnglish = member_password.search(/[a-z]/ig);
+    	var passwordRules = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{7,13}$/;
     	
 		$.ajax
 		({
@@ -99,33 +98,24 @@ $( document ).ready( function() {
     				$("#idLengthCheck").css("color","black");
         			$('#idCheck').load(document.URL +  ' #idCheck');		//일부만 새로고침
         			$("#signUpBtn").attr("disabled", true);
-        			if(/^[a-zA-Z0-9]{7,13}$/.test(member_password))
+        			if(passwordRules.test(member_password))
         			{
-        				if(checkNumber > 0 || checkEnglish > 0)
-        				{
-	        				if(member_password != member_passwordCheck)
-	            			{
-	            	    		$("#passwordCheck").text("비밀번호가 일치하지 않습니다.");
-	            				$("#passwordCheck").css("color","black");   
-	            				$("#signUpBtn").attr("disabled", true);
-	            			}
-	            			else
-	            			{
-	            	    		$("#passwordCheck").text("비밀번호가 일치합니다.");
-	            				$("#passwordCheck").css("color","black"); 
-	            				$("#signUpBtn").attr("disabled", true);
-	            			}
-        				}
-        				else
-        				{
-        					$("#passwordCheck").text("영어와 숫자를 섞어서 사용해주세요.");
-   	    					$("#passwordCheck").css("color","black");
-   	    					$("#signUpBtn").attr("disabled", true);
-        				}
+        				if(member_password != member_passwordCheck)
+            			{
+            	    		$("#passwordCheck").text("비밀번호가 일치하지 않습니다.");
+            				$("#passwordCheck").css("color","black");   
+            				$("#signUpBtn").attr("disabled", true);
+            			}
+            			else
+            			{
+            	    		$("#passwordCheck").text("비밀번호가 일치합니다.");
+            				$("#passwordCheck").css("color","black"); 
+            				$("#signUpBtn").attr("disabled", true);
+            			}
         			}
         			else
         			{
-        				$("#passwordCheck").text("비밀번호는 영어+숫자로7~13자로해주세요.");
+        				$("#passwordCheck").text("특수문자와+영문+숫자로7~13자로해주세요.");
        					$("#passwordCheck").css("color","black");
        					$("#signUpBtn").attr("disabled", true);
         			}
@@ -140,69 +130,50 @@ $( document ).ready( function() {
         				$("#idCheck").text("사용중인 아이디입니다-");
         				$("#idCheck").css("color","black");
         				$("#signUpBtn").attr("disabled", true);
-        				if(/^[a-zA-Z0-9]{7,13}$/.test(member_password))
+        				if(passwordRules.test(member_password))
         				{
-        					if(checkNumber > 0 || checkEnglish > 0)
-        					{
-	        					if(member_password != member_passwordCheck)
-	                			{
-	                	    		$("#passwordCheck").text("비밀번호가 일치하지 않습니다.");
-	                				$("#passwordCheck").css("color","black");   
-	                				$("#signUpBtn").attr("disabled", true);
-	                			}
-	                			else
-	                			{
-	                	    		$("#passwordCheck").text("비밀번호가 일치합니다.");
-	                				$("#passwordCheck").css("color","black"); 
-	                				$("#signUpBtn").attr("disabled", true);
-	                			}
-        					}
-        					else
-        					{
-        						$("#passwordCheck").text("영어와 숫자를 섞어서 사용해주세요.");
-       	    					$("#passwordCheck").css("color","black");
-       	    					$("#signUpBtn").attr("disabled", true);
-        					}
+	        				if(member_password != member_passwordCheck)
+	                		{
+	                	   		$("#passwordCheck").text("비밀번호가 일치하지 않습니다.");
+	                			$("#passwordCheck").css("color","black");   
+	                			$("#signUpBtn").attr("disabled", true);
+	                		}
+	                		else
+	                		{
+	                	   		$("#passwordCheck").text("비밀번호가 일치합니다.");
+	                			$("#passwordCheck").css("color","black"); 
+	                			$("#signUpBtn").attr("disabled", true);
+	                		}
         				}
         				else
         				{
-        					$("#passwordCheck").text("비밀번호는 영어+숫자로7~13자로해주세요.");
+        					$("#passwordCheck").text("특수문자와+영문+숫자로7~13자로해주세요.");
            					$("#passwordCheck").css("color","black");
            					$("#signUpBtn").attr("disabled", true);
         				}
-            			
         			}
         			else
         			{
         				$("#submitBtn").attr("disabled", true);
         				$('#idCheck').load(document.URL +  ' #idCheck');		//일부만 새로고침
-        				if(/^[a-zA-Z0-9]{7,13}$/.test(member_password))
+        				if(passwordRules.test(member_password))
         				{
-        					if(checkNumber > 0 || checkEnglish > 0)
-        					{
-	        					if(member_password != member_passwordCheck)
-	                			{
-	                	    		$("#passwordCheck").text("비밀번호가 일치하지 않습니다.");
-	                				$("#passwordCheck").css("color","black");  
-	                				$("#signUpBtn").attr("disabled", true);
-	                			}
-	                			else
-	                			{
-	                	    		$("#passwordCheck").text("비밀번호가 일치합니다.");
-	                				$("#passwordCheck").css("color","black"); 
-	                				$("#signUpBtn").attr("disabled", false);
-	                			}
-        					}
-        					else
-        					{
-        						$("#passwordCheck").text("영어와 숫자를 섞어서 사용해주세요.");
-       	    					$("#passwordCheck").css("color","black");
-       	    					$("#signUpBtn").attr("disabled", true);
-        					}
+	        				if(member_password != member_passwordCheck)
+	                		{
+	                	   		$("#passwordCheck").text("비밀번호가 일치하지 않습니다.");
+	                			$("#passwordCheck").css("color","black");  
+	                			$("#signUpBtn").attr("disabled", true);
+	                		}
+	                		else
+	                		{
+	                	   		$("#passwordCheck").text("비밀번호가 일치합니다.");
+	                			$("#passwordCheck").css("color","black"); 
+	                			$("#signUpBtn").attr("disabled", false);
+	                		}
         				}
         				else
         				{
-        					$("#passwordCheck").text("비밀번호는 영어+숫자로7~13자로해주세요.");
+        					$("#passwordCheck").text("특수문자와+영문+숫자로7~13자로해주세요.");
            					$("#passwordCheck").css("color","black");
            					$("#signUpBtn").attr("disabled", true);
         				}
@@ -215,33 +186,24 @@ $( document ).ready( function() {
     				$("#idLengthCheck").css("color","black");
         			$('#idCheck').load(document.URL +  ' #idCheck');		//일부만 새로고침
         			$("#signUpBtn").attr("disabled", true);
-        			if(/^[a-zA-Z0-9]{7,13}$/.test(member_password))
+        			if(passwordRules.test(member_password))
         			{
-        				if(checkNumber > 0 || checkEnglish > 0)
-        				{
-	        				if(member_password != member_passwordCheck)
-	            			{
-	            	    		$("#passwordCheck").text("비밀번호가 일치하지 않습니다.");
-	            				$("#passwordCheck").css("color","black");  
-	            				$("#signUpBtn").attr("disabled", true);
-	            			}
-	            			else
-	            			{
-	            	    		$("#passwordCheck").text("비밀번호가 일치합니다.");
-	            				$("#passwordCheck").css("color","black"); 
-	            				$("#signUpBtn").attr("disabled", true);
-	            			}
-        				}
-        				else
-        				{
-        					$("#passwordCheck").text("영어와 숫자를 섞어서 사용해주세요.");
-   	    					$("#passwordCheck").css("color","black");
-   	    					$("#signUpBtn").attr("disabled", true);
-        				}
+	        			if(member_password != member_passwordCheck)
+	            		{
+	            	   		$("#passwordCheck").text("비밀번호가 일치하지 않습니다.");
+	            			$("#passwordCheck").css("color","black");  
+	            			$("#signUpBtn").attr("disabled", true);
+	            		}
+	            		else
+	            		{
+	            	   		$("#passwordCheck").text("비밀번호가 일치합니다.");
+	            			$("#passwordCheck").css("color","black"); 
+	            			$("#signUpBtn").attr("disabled", true);
+	            		}
         			}
         			else
         			{
-        				$("#passwordCheck").text("비밀번호는 영어+숫자로7~13자로해주세요.");
+        				$("#passwordCheck").text("특수문자와+영문+숫자로7~13자로해주세요.");
        					$("#passwordCheck").css("color","black");
        					$("#signUpBtn").attr("disabled", true);
         			}
@@ -271,7 +233,7 @@ $( document ).ready( function() {
 					<div class="signUpFormDiv">
 						<a>NAME</a><br><input type="text" name="member_name" id="name" required="required" maxlength="7"/><br>
 						<a style="width:373px;">ID</a><div class="idCheck" id="idCheck" style="display:inline-block;"></div><div class="idLengthCheck" id="idLengthCheck" style="display:inline-block;"></div><br><input type="text" name="member_id" id="member_id" required="required"/><br>
-						<a style="width:403px;">PASSWORD</a><div class="passwordCheck" id="passwordCheck" style="display:inline-block;"></div><br><input type="password" name="member_password" id="member_password" required="required"/><br>
+						<a style="width:398px;">PASSWORD</a><div class="passwordCheck" id="passwordCheck" style="display:inline-block;"></div><br><input type="password" name="member_password" id="member_password" required="required"/><br>
 						<a>PASSWORD CHECK</a><br><input type="password" name="member_passwordCheck" id="member_passwordCheck" required="required"/><br>
 						<a>ADDRESS</a><br><input type="text" name="member_address" id="address" required="required"/><br>
 						<a>TEL</a><br><input type="text" name="member_tel" id="tel" required="required" placeholder="- 제외하고 작성해주세요"/><br>
