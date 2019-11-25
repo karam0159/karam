@@ -97,7 +97,7 @@ $( document ).ready( function() {
 						<a>BIRTH</a><br><input type="date" name="member_birth" id="birth" value="${memberVO.member_birth }" required="required"/><br>
 						<a>ACCOUNT_NAME</a><br><input type="text" name="account_name" id="account_name" value="${memberVO.account_name }" required="required"/><br>
 						<a>ACCOUNT_BANK</a><br><input type="text" name="account_bank" id="account_bank" value="${memberVO.account_bank }" required="required"/><br>
-						<a>ACCOUNT</a><br><input type="text" name="account" id="account" value="${memberVO.account }" required="required"/>
+						<a>ACCOUNT</a><br><input type="number" name="account" id="account" value="${memberVO.account }" required="required"/>
 						<input type="submit" value="정보수정하기" class="signUpBtn" id="signUpBtn" style="margin-bottom:0px;"/>
 						<input type="button" value="포인트주기(5000P)" class="signUpBtn" id="pointBtn" onclick="memberPoint('${memberVO.member_id}');"/>
 					</div>	

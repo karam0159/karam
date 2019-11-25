@@ -241,7 +241,7 @@ $( document ).ready( function() {
 						<a>BIRTH</a><br><input type="date" name="member_birth" id="birth" required="required"/><br>
 						<a>ACCOUNT_NAME</a><br><input type="text" name="account_name" id="account_name" required="required"/><br>
 						<a>ACCOUNT_BANK</a><br><input type="text" name="account_bank" id="account_bank" required="required"/><br>
-						<a>ACCOUNT</a><br><input type="text" name="account" id="account" required="required"/>
+						<a>ACCOUNT</a><br><input type="number" name="account" id="account" required="required"/>
 					</div>	
 					<div class="signUpText">
 						<a class="title">가입약관</a><br>
